@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./jquery-3.6.1.min.1.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="world" id="click">
+        <div class="backCuts" id="grade">
+            <div class="set1">
+                <div class="set2"></div>
+            </div>
+        </div>
+        <div class="rocket moonset">
+            <div class="picsM">
+                <img src="pics/rocket.png" alt="">
+                <img class="flame" src="pics/slame.png" alt="">
+            </div>
+        </div>
+        <div class="cloudSet Active" id="clouds">
+            <div class="cc1 cc"></div>
+            <div class="cc2 cc"></div>
+            <div class="cc3 cc"></div>
+            <div class="cc4 cc"></div>
+        </div>
+        <div class="sunMoon" id="sphere">
+            <div class="bomps">
+                <div class="spore s1"></div>
+                <div class="spore s2"></div>
+                <div class="spore s3"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        $('#click').click( () => {
+            $('#click').toggleClass('Active')
+            $('#sphere').toggleClass('Active')
+            $('#clouds').toggleClass('Active')
+            $('#grade').toggleClass('Active')
+        }
+        )
+    </script>
+</body>
+</html>

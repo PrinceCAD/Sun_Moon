@@ -1,0 +1,267 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    overflow: hidden;
+}
+:root{
+    --height: 15rem;
+    --time: 1s;
+}
+.world{
+    width: 35rem;
+    height: var(--height);
+    margin: auto;
+    background-color: rgb(40, 40, 53);
+    border-radius: 150px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: var(--time);
+    box-shadow: 0 3px 40px rgba(26, 28, 43, 0.664);
+}
+:root{
+    --moonBG :rgb(238, 231, 210);
+    --sunBG : rgb(255, 232, 140);
+    --sporeSize: 4rem;
+}
+.sunMoon{
+    height: calc(var(--height) - 2rem);
+    width: calc(var(--height) - 2rem);
+    border-radius: 200%;
+    margin: auto;
+    background: var(--moonBG);
+    transform: translateX(78%);
+    transition: var(--time);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 3px 30px #21212172;
+    position: absolute;
+    overflow: hidden;
+}
+:root{
+    --shade1:rgba(238, 231, 210,0.08);
+    --shade2:rgba(238, 231, 210, 0.06);
+    --shade3:rgba(238, 231, 210,0.04);
+
+    --shadeS1:rgba(255, 232, 140,0.3);
+    --shadeS2:rgba(255, 232, 140, 0.19);
+    --shadeS3:rgba(255, 232, 140,0.1);
+}
+.backCuts{
+    width: 100%;
+    transform: translate(5rem,0);
+    height: 20rem;
+    background-color:  var(--shade3);
+    position: absolute;
+    border-radius: 180px;
+    display: flex;
+    justify-content: center;
+    animation: sidesMove 20s infinite ease-in;
+    transition: var(--time);
+}
+
+.backCuts div{
+    display: flex;
+    justify-content: center;
+    animation: sidesMove 20s infinite ease-in;
+    width: 200%;
+    height: 20rem;
+    border-radius: 180px;
+    transform: translate(5rem,0);
+    transition: var(--time);
+}
+
+#grade.Active{
+    transform: translate(-5rem,0);
+    background-color:  var(--shadeS3);
+}
+#grade.Active div{
+    transform: translate(-5rem,0);
+}
+#grade.Active .set1{
+    background: var(--shadeS2);
+}
+#grade.Active .set2{
+    background: var(--shadeS1);
+}
+
+
+
+
+
+#grade .set1{
+    z-index: 6;
+    background: var(--shade2);
+}
+#grade .set2{
+
+    background: var(--shade1);
+}
+.sunMoon div>div{
+    border-radius: 100%;
+    background-color: var(--moonBG);
+    box-shadow: inset 0 3px 20px #00000038;
+    transition: var(--time);
+}
+.s1{
+    width: calc(var(--sporeSize) + 0rem);
+    height: calc(var(--sporeSize) + 0rem);
+    transform: translate(-2.5rem, 5rem);
+}
+.s2{
+    width: calc(var(--sporeSize) + 1rem);
+    height: calc(var(--sporeSize) + 1rem);
+    transform: translate(-0.8rem, 5rem);
+}
+.s3{
+    width: calc(var(--sporeSize) + 3rem);
+    height: calc(var(--sporeSize) + 3rem);
+    transform: translate(3rem, -7rem);
+}
+
+
+#click.Active {
+    background-color: rgb(187, 202, 255);
+}
+#sphere.Active {
+    transition: var(--time);
+    box-shadow: inset 0 3px 30px #ff330072;
+    transform: translateX(-78%);
+    background-color: var(--sunBG);
+}
+#sphere.Active div div{
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.cloudSet{
+    display: flex;
+    transform: translate(0rem ,2rem);
+    z-index: 100;
+}
+:root{
+    --cloudBG : #ffffff;
+    --CloudShade : #efefef;
+}
+.cc{
+    width: 10rem;
+    height: 10rem;
+    background-color: var(--cloudBG);
+    border-radius: 100%;
+    box-shadow: inset 0 0px 24px var(--CloudShade);
+    transition: var(--time);
+}
+#clouds .cc1{
+    transform: translate(1rem, 3rem);
+}
+#clouds .cc2{
+    transform: translate(-3rem, 4rem);
+}
+#clouds .cc3{
+    transform: translate(-5rem, 2rem);
+}
+#clouds .cc4{
+    transform: translate(-7.5rem, 7rem);
+}
+
+#clouds.Active div{
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0px 10px #fff;
+}
+:root{
+    --Stars:0.2rem;
+}
+#clouds.Active{
+    z-index: 60;
+}
+#clouds.Active .cc1{
+    width: var(--Stars);
+    height: var(--Stars);
+    transform: translate(-12rem, -8rem);
+}
+#clouds.Active .cc2{
+    width: var(--Stars);
+    height: var(--Stars);
+    transform: translate(-1rem, -7rem);
+}
+#clouds.Active .cc3{
+    width: var(--Stars);
+    height: var(--Stars);
+    transform: translate(-10rem, 2rem);
+}
+#clouds.Active .cc4{
+    width: var(--Stars);
+    height: var(--Stars);
+    transform: translate(-1.3rem, 0rem);
+}
+
+
+.rocket {
+    width: 80px;
+    height: 300%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 99;
+    animation: 120s ease-in-out 0s infinite normal none running rotor;
+}
+.sunset div{
+    flex-direction: row;
+}
+.rocket >div{
+    height: fit-content;
+    width: 100%;
+    animation: move 30s infinite;
+}
+.moonset img{
+    width: 100%;
+}
+.flame{
+    animation: fire 0.1s infinite ;
+}
+@keyframes fire {
+    0%{
+    }
+    50%{
+        height: 60%;
+    }
+    100%{
+    }
+}
+@keyframes smook {
+    0%{
+    }
+    50%{
+        width: 60%;
+    }
+    100%{
+    }
+}
+@keyframes move {
+    0%{
+        transform: translateY(260%);
+    }
+    100%{
+        transform: translateY(-260%);
+    }
+}
+@keyframes rotor {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}
